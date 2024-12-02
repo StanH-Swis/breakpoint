@@ -1,7 +1,7 @@
 //////////////////////////////
 // Import Pieces
 //////////////////////////////
-@import "triple/default";
+@use "triple/default";
 
 @function breakpoint-parse-triple($feature, $empty-media, $first) {
   $parsed: '';
@@ -29,7 +29,7 @@
     }
   }
 
-  $parsed: breakpoint-parse-triple-default($string, nth($numbers, 1), nth($numbers, 2));
+  $parsed: default.breakpoint-parse-triple-default($string, nth($numbers, 1), nth($numbers, 2));
 
   @return $leader + $parsed;
 

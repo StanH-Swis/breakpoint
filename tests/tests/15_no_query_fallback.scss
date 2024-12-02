@@ -1,22 +1,23 @@
+@use 'variables';
+@use '../../stylesheets/breakpoint';
+@use '../../stylesheets/breakpoint/settings';
+
 /**
  * IE no-query fallbacks.
  */
-@import "breakpoint";
-@include breakpoint-set('no queries', true);
-@include breakpoint-set('no query fallbacks', '.no-mq');
-
-@import '11_legacy_syntax';
+@include settings.breakpoint-set('no queries', true);
+@include settings.breakpoint-set('no query fallbacks', '.no-mq');
 
 /*
  * No Query
  */
 .no-query {
-  @include breakpoint($no-query) {
-    _query: "#{$no-query}";
+  @include breakpoint.breakpoint(variables.$no-query) {
+    _query: "#{variables.$no-query}";
     _expected: "@media (min-width: 700px)";
   }
-  @include mq($no-query) {
-    _query: "#{$no-query}";
+  @include breakpoint.mq(variables.$no-query) {
+    _query: "#{variables.$no-query}";
     _expected: "@media (min-width: 700px)";
   }
 }

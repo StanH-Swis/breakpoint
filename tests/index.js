@@ -12,7 +12,7 @@ async function testMacro(t, file) {
     importers: [{
       findFileUrl(url) {
         if (url.startsWith('breakpoint')) {
-          return new URL(url, pathToFileURL(path.join(process.cwd(), 'stylesheets/')));;
+          return new URL(url, pathToFileURL(path.join(process.cwd(), 'stylesheets/')));
         } else if (url === 'memo' || url.startsWith('sassy-maps')) {
           return new URL(url, pathToFileURL(path.join(process.cwd(), 'node_modules/sassy-maps/sass/')));
         }

@@ -1,3 +1,5 @@
+@use '../breakpoint';
+
 ////////////////////////
 // Default the Breakpoints variable
 ////////////////////////
@@ -20,7 +22,7 @@ $BREAKPOINTS: () !default;
     @content;
   }
   @else if map-has-key($BREAKPOINTS, $context) {
-    @include breakpoint(map-get($BREAKPOINTS, $context), $no-query) {
+    @include breakpoint.breakpoint(map-get($BREAKPOINTS, $context), $no-query) {
       @content;
     }
   }
